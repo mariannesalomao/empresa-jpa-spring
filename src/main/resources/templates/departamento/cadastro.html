@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Spring-Boot Básico</title>
+    <title>Spring-Boot</title>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport"
@@ -96,6 +96,25 @@
 	        </nav>
 
 	        <div class="container" id="cadastro">
+
+            <div th:if="${success} != null">
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="oi oi-check"></i>
+                <span>
+                  <strong th:text="${success}"></strong>
+                </span>
+              </div>
+            </div>
+
+            <div th:if="${fail} != null">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="oi oi-check"></i>
+                <span>
+                  <strong th:text="${fail}"></strong>
+                </span>
+              </div>
+            </div>
+
 	            <form th:action="${departamento.id == null} ? @{/departamentos/salvar} : @{/departamentos/editar}"
                     th:object="${departamento}" method="POST">
 	                <div class="form-row">

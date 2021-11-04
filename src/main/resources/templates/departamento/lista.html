@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Spring-Boot Básico</title>
+    <title>Spring-Boot </title>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -96,6 +96,24 @@
 
 	        <div class="container" id="listagem">
 
+            <div th:if="${success} != null">
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="oi oi-check"></i>
+                <span>
+                  <strong th:text="${success}"></strong>
+                </span>
+              </div>
+            </div>
+
+            <div th:if="${fail} != null">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="oi oi-check"></i>
+                <span>
+                  <strong th:text="${fail}"></strong>
+                </span>
+              </div>
+            </div>
+
 	            <div class="table-responsive">
 	                <table class="table table-striped table-hover table-sm">
 	                    <thead>
@@ -113,28 +131,27 @@
 	                            <a class="btn btn-info btn-sm" th:href="@{ /departamentos/editar/{id} (id=${d.id}) }" role="button">
 	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 	                            </a>
-	                            <button th:id="${ 'btn_departamentos/excluir/' + d.id }" type="button" class="btn btn-danger btn-sm"
+	                            <button th:id="${ 'btn_departamentos/excluir/' + d.id }" type="button" class="btn btn-danger btn-sm button-exc"
                                 data-toggle="modal" data-target="#myModal" data-bs-toggle="modal" data-bs-target="#myModal">
 	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
 	                            </button>
 
-                              <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-                                <div class="modal-dialog" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                      <h4 class="modal-title">Atenção</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                      <p>Clique Ok para proceder com a exclusão.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancelar</button>
-                                      <button id="ok_confirm" type="button" class="btn btn-primary">OK</button>
-                                    </div>
+                            <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                                    <h4 class="modal-title">Atenção</h4>
                                   </div>
-                                </div>
-                              </div>
+                                  <div class="modal-body">
+                                    <p>Clique em Ok para proceder com a exclusão.&hellip;</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button id="ok_confirm" type="button" class="btn btn-primary">Ok</button>
+                                  </div>
+                                </div>    <!-- /.modal-content -->
+                              </div>  <!-- /.modal-dialog -->
+                            </div>
 	                        </td>
 	                    </tr>
 	                    </tbody>
@@ -166,6 +183,14 @@
   $('button[id*="btn_"]').click(function () {
     url = "http://localhost:8080/" + $(this).attr('id').split("_")[1]
   })
+
+  // $('.button-exc').click(function () {
+  //   url = "http://localhost:8080/" + $(this).attr('id').split("_")[1]
+  // })
+
+  // document.getElementsByClassName("button-exc").click(function () {
+  //   url = "http://localhost:8080/" + $(this).attr('id').split("_")[1]
+  // })
 
   $('#ok_confirm').click(function () {
     document.location.href = url

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Spring-Boot Básico</title>
+    <title>Spring-Boot</title>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
-  
+
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet"/>
 </head>
@@ -23,15 +23,15 @@
 				<div class="navbar-header">
 					<button type="button" class="btn btn-dark navbar-toggle pull-left">
 						<i class="oi oi-menu"></i>
-					</button>				
+					</button>
 					<a class="navbar-brand navbar-toggle pull-left" href="#">Curso Spring Boot</a>
 				</div>
 			</div>
 		</nav>
 	</header>
-	
+
 	<div class="layout-main">
-	
+
 	    <aside>
 	        <nav class="sidebar  sidebar-open">
 	            <ul class="nav nav-pills">
@@ -39,7 +39,7 @@
 	                        class="oi oi-home"></i> <span>Home</span>
 	                </a></li>
 	            </ul>
-	
+
 	            <ul class="nav nav-pills">
 	                <li class="nav-item"><span class="nav-link active">Departamentos</span></li>
 	                <li class="nav-item"><a class="nav-link"
@@ -51,7 +51,7 @@
 	                    <span>Listar </span>
 	                </a></li>
 	            </ul>
-	
+
 	            <ul class="nav nav-pills">
 	                <li class="nav-item"><span class="nav-link active">Cargos</span></li>
 	                <li class="nav-item"><a class="nav-link"
@@ -62,7 +62,7 @@
 	                        class="oi oi-spreadsheet"></i> <span>Listar </span>
 	                </a></li>
 	            </ul>
-	
+
 	            <ul class="nav nav-pills">
 	                <li class="nav-item"><span class="nav-link active">Funcionários</span></li>
 	                <li class="nav-item"><a class="nav-link"
@@ -76,7 +76,7 @@
 	            </ul>
 	        </nav>
 	    </aside>
-	
+
 	    <section class="layout-content">
 	        <div class="page-header">
 	            <nav class="navbar navbar-expand-md navbar-top bg-light">
@@ -94,7 +94,7 @@
 	                </a>
 	            </nav>
 	        </div>
-	
+
 	        <div class="container" id="cadastro">
 	            <form action="/funcionarios/salvar" method="POST">
 	                <div class="form-row">
@@ -103,7 +103,7 @@
 	                        <input type="text" class="form-control" id="nome" placeholder="Nome Completo"
 	                               autofocus="autofocus" name="nome" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                    <div class="form-group col-md-6">
@@ -111,7 +111,7 @@
 	                        <input type="text" class="form-control" id="salario" data-mask="#.##0,00"
 	                               data-mask-reverse="true" name="salario" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                </div>
@@ -120,14 +120,14 @@
 	                        <label for="dataEntrada">Data de Entrada</label>
 	                        <input type="date" class="form-control" id="dataEntrada" name="dataEntrada" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                    <div class="form-group col-md-6">
 	                        <label for="dataSaida">Data de Saída</label>
 	                        <input type="date" class="form-control" id="dataSaida" name="dataSaida" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                </div>
@@ -149,7 +149,7 @@
 	                            <option value="11">Psicologo</option>
 	                        </select>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                </div>
@@ -158,7 +158,7 @@
 	                        <label for="cidade">Cidade</label>
 	                        <input type="text" class="form-control" id="cidade" name="endereco.cidade" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                    <div class="form-group col-md-6">
@@ -166,7 +166,7 @@
 	                        <input type="text" class="form-control" id="logradouro" placeholder="logradouro sem número"
 	                               name="endereco.logradouro" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                </div>
@@ -175,7 +175,7 @@
 	                        <label for="numero">Número</label>
 	                        <input type="text" class="form-control" id="numero" name="endereco.numero" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                    <div class="form-group col-md-6">
@@ -183,7 +183,7 @@
 	                        <input type="text" class="form-control" id="complemento" placeholder="fundos, casa, AP. 102, .."
 	                               name="endereco.complemento" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                </div>
@@ -192,7 +192,7 @@
 	                        <label for="bairro">Bairro</label>
 	                        <input type="text" class="form-control" id="bairro" name="endereco.bairro" value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                    <div class="form-group col-md-4">
@@ -227,7 +227,7 @@
 	                            <option value="TO">TO</option>
 	                        </select>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                    <div class="form-group col-md-2">
@@ -235,7 +235,7 @@
 	                        <input type="text" class="form-control" id="cep" data-mask="00000-000" name="endereco.cep"
 	                               value=""/>
 	                        <div class="invalid-feedback">
-	
+
 	                        </div>
 	                    </div>
 	                </div>
@@ -244,14 +244,14 @@
 	            </form>
 	        </div>
 	    </section>
-	
+
 	</div>
-	
+
     <footer class="layout-footer">
         <div class="container">
             <span class="footer-copy">&copy; 2018 MBallem. Todos os direitos reservados.</span>
         </div>
-    </footer>	
+    </footer>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -265,7 +265,7 @@
     $(function () {
         $('[data-toggle="popover"]').popover();
     });
-    
+
 	$(document).ready(function(){
 	    $(".navbar-toggle").click(function(){
 	        $(".sidebar").toggleClass("sidebar-open");
@@ -274,4 +274,4 @@
 
 </script>
 </body>
-</html>		
+</html>
